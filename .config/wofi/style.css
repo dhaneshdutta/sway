@@ -1,0 +1,12 @@
+* {
+    background: black;
+    color: white;
+    font-family: Source Code Pro;
+    font-size: 14px;
+}
+
+#entry:selected {
+    background: white;
+    color: black;
+}
+

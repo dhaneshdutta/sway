@@ -1,0 +1,9 @@
+show_icons=false
+width=600
+height=400
+location=center
+allow_images=false
+insensitive=true
+prompt="> "
+term=foot
+
