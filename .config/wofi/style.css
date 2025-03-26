@@ -1,0 +1,20 @@
+window {
+    background-color: #000000;
+    border: 2px solid #888888;
+    padding: 5px;
+}
+
+#entry {
+    color: #bbbbbb;
+    background-color: #000000;
+    border-radius: 0px; /* No rounded corners */
+    padding: 2px 5px;
+    font-size: 14px;
+}
+
+#entry:selected {
+    color: #000000;
+    background-color: #888888;
+    border-radius: 0px; /* No rounded corners */
+}
+
