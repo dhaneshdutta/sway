@@ -1,0 +1,86 @@
+/* === Base Theme === */
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 14px;
+    color: #cccccc;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* === Notification Window === */
+.notification-window {
+    background-color: rgba(20, 20, 20, 0.95);
+    border-radius: 12px;
+    border: 1px solid #333333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    margin: 8px;
+    padding: 10px;
+}
+
+/* === Notification Box === */
+.notification {
+    background-color: rgba(25, 25, 25, 0.9);
+    border: 1px solid #444444;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 8px;
+}
+
+/* === Notification Title === */
+.notification .title {
+    font-weight: bold;
+    color: #dddddd;
+    margin-bottom: 6px;
+}
+
+/* === Notification Body === */
+.notification .body {
+    color: #bbbbbb;
+}
+
+/* === Buttons === */
+button {
+    background-color: #2c2c2c;
+    color: #bbbbbb;
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin: 2px;
+    border: 1px solid #444444;
+}
+
+button:hover {
+    background-color: #3a3a3a;
+}
+
+/* === Close Button === */
+.close-button {
+    background-color: transparent;
+    color: #888888;
+    font-size: 16px;
+}
+
+.close-button:hover {
+    color: #aaaaaa;
+}
+
+/* === Progress Bar === */
+progressbar,
+progress {
+    border-radius: 10px;
+    min-height: 6px;
+    background-color: #222222;
+}
+
+progressbar progress {
+    background-color: #666666;
+}
+
+/* === Image/Icon === */
+.image {
+    margin-right: 10px;
+    border-radius: 6px;
+    background-color: #111111;
+}
+

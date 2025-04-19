@@ -5,7 +5,7 @@ fi
 [[ $- != *i* ]] && return
 
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="af-magic"
+ZSH_THEME="fwalch"
 
 # aliases
 alias vi='nvim'
@@ -30,5 +30,6 @@ export GDK_BACKEND=wayland
 export QT_QPA_PLATFORM=wayland-egl
 export CLUTTER_BACKEND=wayland
 export SDL_VIDEODRIVER=wayland
-export STEAM_USE_XWAYLAND=1
-
+#export STEAM_USE_XWAYLAND=1
+export UNZIP_DISABLE_ZIPBOMB_DETECTION=TRUE
+export QT_QPA_PLATFORMTHEME=qt6ct

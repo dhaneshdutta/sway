@@ -93,7 +93,7 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+    bindsym $mod+r mode "resize"
 
 # Utilities:
     bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
@@ -104,13 +104,14 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     bindsym Print exec grim - | tee ~/pix/sshots/full_$(date +'%Y-%m-%d_%H-%M-%S').png | wl-copy
     bindsym Shift+Print exec grim -g "$(slurp)" - | tee ~/pix/sshots/region_$(date +'%Y-%m-%d_%H-%M-%S').png | wl-copy
-    bindsym $mod+Shift+f exec echo "g" | wl-copy
-    bindsym $mod+Shift+j exec echo "h" | wl-copy
+    bindsym $mod+Shift+f exec echo "g"|wl-copy
+    bindsym $mod+Shift+j exec echo "h"|wl-copy
+    bindsym $mod+Shift+b exec blueman-manager
+    bindsym $mod+Shift+s exec ~/.config/sway/scripts/toggletouch.sh
 
 # Window Rules:
-
-for_window [app_id="pavucontrol"] floating enable, move position center, resize set 800 600  
-for_window [app_id="blueman-manager"] floating enable, move position center, resize set 800 600  
+    for_window [app_id="pavucontrol"] floating enable, move position center, resize set 800 600  
+    for_window [app_id="blueman-manager"] floating enable, move position center, resize set 800 600  
 
 
 # Status Bar:
