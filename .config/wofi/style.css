@@ -1,20 +1,69 @@
-window {
-    background-color: #000000;
-    border: 2px solid #888888;
-    padding: 5px;
-}
+/* Dark Monochromatic Wofi Style */
 
-#entry {
-    color: #bbbbbb;
-    background-color: #000000;
-    border-radius: 0px; /* No rounded corners */
-    padding: 2px 5px;
+window {
+    background-color: #121212;
+    border: 2px solid #333333;
+    border-radius: 0px;
+    margin: 0px;
+    font-family: monospace;
     font-size: 14px;
 }
 
-#entry:selected {
-    color: #000000;
-    background-color: #888888;
-    border-radius: 0px; /* No rounded corners */
+#outer-box {
+    margin: 5px;
+    background-color: #121212;
 }
 
+#input {
+    color: #e0e0e0;
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    border-radius: 0px;
+    margin: 5px;
+    padding: 4px 8px;
+}
+
+#input:focus {
+    border: 1px solid #555555;
+}
+
+#scroll {
+    margin: 5px;
+    background-color: #121212;
+}
+
+#inner-box {
+    margin: 5px;
+    background-color: #121212;
+}
+
+#entry {
+    color: #dddddd;
+    background-color: #121212;
+    border-radius: 0px;
+    padding: 5px 8px;
+}
+
+#entry:selected {
+    color: #ffffff;
+    background-color: #2a2a2a;
+    border-left: 3px solid #555555;
+}
+
+#text {
+    margin: 4px;
+    color: inherit;
+}
+
+#text:selected {
+    color: #ffffff;
+}
+
+#img {
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+#unselected {
+    opacity: 0.7;
+}
