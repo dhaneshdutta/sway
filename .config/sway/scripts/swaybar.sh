@@ -157,14 +157,21 @@ get_cpu() {
     echo "🔥 ${usage}%"
 }
 
+# Function to get disk usage
+get_disk() {
+    used=$(df -h / | awk 'NR==2 {print $3}')
+    total=$(df -h / | awk 'NR==2 {print $2}')
+    echo "💾 $used/$total"
+}
+
 # Infinite loop for the status bar
 while true; do
     media_section="$(get_media)"
     volume_section="$(get_volume)"
-    left_section="$(get_battery) | $(get_ram) | $(get_cpu)"
+    left_section="$(get_battery) | $(get_ram) | $(get_cpu) | $(get_disk)"
     right_section="$(get_datetime)"
 
-    # Output: Media | Volume | Battery/RAM/CPU | Date/Time
+    # Output: Media | Volume | Battery/RAM/CPU/Disk | Date/Time
     echo "$media_section | $volume_section | $left_section | $right_section"
 
     sleep 1
