@@ -108,6 +108,8 @@ mode "resize" {
     bindsym $mod+Shift+j exec echo "h"|wl-copy
     bindsym $mod+Shift+b exec blueman-manager
     bindsym $mod+Shift+s exec ~/.config/sway/scripts/toggletouch.sh
+    bindsym $mod+F5 exec powerprofilesctl set power-saver
+    bindsym $mod+F6 exec powerprofilesctl set performance
 
 # Window Rules:
     for_window [app_id="pavucontrol"] floating enable, move position center, resize set 800 600  
