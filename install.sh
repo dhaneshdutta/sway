@@ -26,7 +26,7 @@ log "Updating system"
 sudo xbps-install -Syu
 
 PKGS=(
-    nerd-fonts-ttf sway fastfetch swaybg swaylock swayidle wofi NetworkManager base-devel git
+    nerd-fonts-ttf sway swaybg swaylock swayidle wofi NetworkManager base-devel git
     libX11-devel libXrandr-devel libXinerama-devel libXcursor-devel libXi-devel
     mesa-devel wayland-devel libinput-devel libdrm-devel libseat-devel elogind elogind-devel
     polkit polkit-gnome zsh zsh-syntax-highlighting zsh-autosuggestions
@@ -34,6 +34,7 @@ PKGS=(
     pulseaudio pulseaudio-bluetooth pavucontrol
     tlp powertop power-profiles-daemon
     qt5ct qt6ct gtk+3 gtk4
+    yazi ncdu ripgrep fd bat fzf curl wget mpv mpd ncmpcpp zathura imv
 )
 
 log "Installing packages"
@@ -51,6 +52,33 @@ SRC_CONF="$HOME/dev/git/sway/.config"
 log "Setting up ZSH"
 [ ! -d "$HOME/.oh-my-zsh" ] && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 [ "$SHELL" != "$(which zsh)" ] && chsh -s "$(which zsh)"
+
+log "Configuring MPD"
+mkdir -p "$HOME/.config/mpd/playlists" "$HOME/.local/share/mpd"
+cat > "$HOME/.config/mpd/mpd.conf" <<EOF
+music_directory    "~/music/Music/"
+playlist_directory "~/.config/mpd/playlists"
+db_file            "~/.local/share/mpd/mpd.db"
+log_file           "~/.local/share/mpd/mpd.log"
+pid_file           "~/.local/share/mpd/mpd.pid"
+state_file         "~/.local/share/mpd/mpdstate"
+bind_to_address    "localhost"
+input {
+        plugin "curl"
+}
+audio_output {
+        type "pulse"
+        name "PulseAudio"
+}
+EOF
+
+log "Creating ncmpcpp config"
+mkdir -p "$HOME/.config/ncmpcpp"
+cat > "$HOME/.config/ncmpcpp/config" <<EOF
+mpd_music_dir = "~/music/Music/"
+mpd_host = "localhost"
+mpd_port = "6600"
+EOF
 
 log "Enabling services"
 for svc in NetworkManager bluetoothd polkitd elogind tlp; do
